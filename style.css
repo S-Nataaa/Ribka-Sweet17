@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Sacramento&display=swap');
+
+:root {
+    --bg-main: #0a192f;      
+    --bg-secondary: #112240; 
+    --text-light: #ccd6f6;   
+    --highlight: #64ffda;   
+    --pink: #ff69b4;         
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(10, 25, 47, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 105, 180, 0.2);
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--pink);
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+    padding-bottom: 100px; 
+}
+
+h1 {
+    font-family: 'Sacramento', cursive;
+    font-size: 3.5rem;
+    color: var(--pink);
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: var(--highlight);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.profile-frame {
+    width: 250px;
+    height: 250px;
+    margin: 20px auto;
+    padding: 5px;
+    border: 3px solid var(--pink);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid var(--pink);
+    color: var(--pink);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--pink);
+    color: var(--bg-main);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.gallery-item:hover {
+    border-color: var(--pink);
+    transform: scale(1.02);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.letter-box {
+    background: var(--bg-secondary);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: justify;
+    border-left: 5px solid var(--pink);
+    box-shadow: 0 10px 40px rgba(161, 196, 253, 0.3);
+}
+
+.highlight-text { color: var(--pink); font-weight: bold; }
+
+.verse {
+    margin-top: 25px;
+    padding: 15px;
+    background: rgba(100, 255, 218, 0.1);
+    border-radius: 8px;
+    color: var(--highlight);
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.music-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: var(--bg-secondary);
+    border: 2px solid var(--pink);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+    z-index: 999;
+    transition: 0.3s;
+}
+
+.music-btn:hover { transform: scale(1.1); }
+.music-btn.playing { animation: spin 4s linear infinite; background: var(--pink); }
+.music-btn.playing span { filter: invert(1); } /* Icon jadi putih */
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+.typing::after { content: '|'; animation: blink 0.7s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+#welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-main);
+    z-index: 9999; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease-in-out, visibility 1s;
+}
+
+.overlay-content {
+    text-align: center;
+    animation: zoomIn 1s ease;
+}
+
+.overlay-content h1 {
+    font-size: 3rem;
+    color: var(--pink);
+    margin-bottom: 20px;
+}
+
+.overlay-content p {
+    color: var(--text-light);
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+}
+
+.btn-open {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background: var(--pink);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+    transition: transform 0.2s;
+}
+
+.btn-open:hover {
+    transform: scale(1.1);
+}
+
+.hide-overlay {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.bg-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    filter: blur(70px); 
+    opacity: 0.6;
+    animation: floatShape 20s infinite alternate;
+}
+
+
+.shape-1 {
+    width: 400px; height: 400px;
+    background: #ff9a9e;
+    top: -100px; left: -100px;
+    border-radius: 50%;
+}
+
+.shape-2 {
+    width: 500px; height: 500px;
+    background: #a18cd1;
+    bottom: -150px; right: -100px;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    animation-delay: -5s;
+}
+
+.shape-3 {
+    width: 300px; height: 300px;
+    background: #fbc2eb;
+    top: 40%; left: 40%;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation-duration: 15s;
+}
+
+@keyframes floatShape {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(60px, 60px) rotate(20deg); }
+}

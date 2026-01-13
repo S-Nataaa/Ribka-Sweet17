@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ribka's Sweet 17</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body style="overflow: hidden;"> 
+    <div class="bg-animation">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <audio id="bg-music" loop>
+        <source src="Happy Birthday To You.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="welcome-overlay">
+        <div class="overlay-content">
+            <h1>Special Gift For Ribka</h1>
+            <p>Pasang Headset Biar Lebih Seru 🎧</p>
+            <button class="btn-open" onclick="bukaHadiah()">Buka Sekarang 🎁</button>
+        </div>
+    </div>
+
+    <div id="music-btn" class="music-btn" onclick="toggleMusic()">
+        <span id="music-icon">🎵</span>
+    </div>
+
+    <nav>
+        <a href="#" onclick="showPage('home')" class="nav-link active" id="link-home">Home</a>
+        <a href="#" onclick="showPage('gallery')" class="nav-link" id="link-gallery">Gallery</a>
+        <a href="#" onclick="showPage('wishes')" class="nav-link" id="link-wishes">Wishes</a>
+    </nav>
+
+    <div class="container">
+        
+        <section id="home" class="page-section active-section">
+            <div class="profile-frame reveal">
+                <img src="img/1.jpg" alt="Ribka JKT48">
+            </div>
+            <h1 class="reveal">Happy Sweet Seventeen🎉</h1>
+            <h2 class="reveal">Ribka Budiman</h2>
+            <p id="typing-text" data-text="Terima Kasih Sudah Lahir Ke Dunia. Tetaplah Bersinar Dan Jadi Versi Terbaik Dari Dirimu..."></p>
+            <br>
+            <div class="reveal">
+                <button onclick="showPage('wishes')" class="btn">Open Letter 💌</button>
+            </div>
+        </section>
+
+        <section id="gallery" class="page-section" style="display: none;">
+            <h1 class="reveal">Captured Moments 📸</h1>
+            <p class="reveal" style="color:var(--pink);">Look How Beautifully You Have Bloomed.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item reveal"><img src="img/2.jpg" alt="Ribka"></div>
+                <div class="gallery-item reveal"><img src="img/3.jpg" alt="Ribka"></div>
+                <div class="gallery-item reveal"><img src="img/4.jpg" alt="Ribka"></div>
+                <div class="gallery-item reveal"><img src="img/5.jpg" alt="Ribka"></div>
+                <div class="gallery-item reveal"><img src="img/6.jpg" alt="Ribka"></div>
+                <div class="gallery-item reveal"><img src="img/7.jpg" alt="Ribka"></div>
+                <div class="gallery-item reveal"><img src="img/8.jpg" alt="Ribka"></div>
+                <div class="gallery-item reveal"><img src="img/9.jpg" alt="Ribka"></div>
+                <div class="gallery-item reveal"><img src="img/10.jpg" alt="Ribka"></div>
+                <div class="gallery-item reveal"><img src="img/11.jpg" alt="Ribka"></div>
+                <div class="gallery-item reveal"><img src="img/12.jpg" alt="Ribka"></div>
+                <div class="gallery-item reveal"><img src="img/13.jpg" alt="Ribka"></div>
+            </div>
+        </section>
+
+        <section id="wishes" class="page-section" style="display: none;">
+            <h1 class="reveal">The Main Character 🎬</h1>
+            <div class="letter-box reveal">
+                <p><strong>Happy Birthday My Main Character ✨</strong></p>
+                <br>
+                <p>Selamat ulang tahun yang ke-17, Ribka! Puji Tuhan untuk berkat usia baru yang indah ini.</p>
+                <p>Selamat datang di babak baru kehidupan yang orang bilang sebagai masa paling indah, <em>Sweet Seventeen</em>. 
+                Rasanya waktu berjalan cepat banget, ya? Melihat kamu tumbuh dan berkembang sampai di titik ini adalah sebuah kebanggaan tersendiri buat aku.</p>
+                <br>
+                <p>Di usiamu yang semakin dewasa ini, aku cuma mau bilang terima kasih. Terima kasih sudah berjuang keras di JKT48, 
+                    terima kasih sudah selalu berusaha memberikan penampilan terbaik, dan terima kasih sudah menjadi alasan banyak orang tersenyum.</p>
+                <br>
+                <p>Ingat ya, di cerita hidupmu, <span class="highlight-text">kamulah tokoh utamanya</span>. Tapi, jangan lupa libatkan Tuhan sebagai Penulis Skenario terbaikmu. Kamu yang jalani perannya, tapi andalkan hikmat Tuhan untuk setiap alurnya. 
+                    Jangan biarkan komentar orang lain merusak skenario indah yang sedang kamu bangun. Entah itu hari yang bahagia atau hari yang berat, just keep going with faith, karena aku akan akan selalu berusaha untuk terus mendukung kamu.</p>
+                <br>
+                <p>Semoga di usia 17 tahun ini, dunia semakin ramah sama kamu. Semoga makin bersinar, dan damai sukacita Tuhan selalu menyertai langkahmu.</p>
+                <div class="verse">
+                    Once again, Happy Sweet 17. Let’s write a beautiful history together.
+                </div>
+                <br>
+                <p><em>God Bless You always! 🙏❤️</em></p>
+            </div>
+            <br>
+            <button onclick="showPage('home')" class="btn reveal">Kembali ke Depan</button>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
